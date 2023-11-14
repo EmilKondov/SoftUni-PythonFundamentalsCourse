@@ -15,7 +15,9 @@
 #    print(f"The price for the coffee is: ${price:.2f}")
 #print(f"Total: ${total_price:.2f}")
 #
-#
+#######################################################
+
+
 #current_command = input()
 #total_coffee_needed = 0
 #while current_command != "END":
@@ -42,6 +44,8 @@
 #    print(total_coffee_needed)
 #    current_command = input()
 #
+###########################################################
+
 
 initial_string = input()
 
