@@ -1,0 +1,10 @@
+#### Solution 1 
+given_string = input().lower()
+
+list_of_words = ["sand", 'water', 'fish', 'sun']
+
+times_of_word_from_list_appearing = 0
+
+for word in list_of_words:
+  times_of_word_from_list_appearing += given_string.count(word)
+print(times_of_word_from_list_appearing)
