@@ -11,4 +11,3 @@ for line in range(number_of_lines):
     tank_capacity -= liters_of_water
     water_counter += liters_of_water
 print(water_counter)
- 
