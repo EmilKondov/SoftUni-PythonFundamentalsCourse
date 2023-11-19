@@ -3,6 +3,11 @@
 #print(my_list[1])
 #
 
-example_list = ["1", "2", "3"]
+#example_list = ["1", "2", "3"]
+#
+#print(' ,   '.join(example_list))
 
-print(' ,   '.join(example_list))
+list_of_cards = set(input().split())
+
+print(list_of_cards)
+
