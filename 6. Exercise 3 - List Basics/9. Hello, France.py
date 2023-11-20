@@ -31,6 +31,7 @@ for item in list_of_items:
            profit += new_price_of_item - price_of_item
            bought_items.append(type_of_item)
            bought_items_new_prices.append(new_price_of_item)
+           price_is_valid = False
 
 print(" ".join([f"{new_price_of_item:.2f}" for new_price_of_item in bought_items_new_prices]))
 print(f"Profit: {profit:.2f}")
@@ -40,4 +41,3 @@ if total_income >= 150:
     print("Hello, France!")
 else:
     print("Not enough money.")
-    
