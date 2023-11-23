@@ -27,7 +27,12 @@
 
 #########  THIRD WAY ################
 
-list_of_numbers = list(map(int, input().split()))
-is_even = lambda x: x % 2 == 0
-result = list(filter(is_even, list_of_numbers))
-print(result)
+#list_of_numbers = list(map(int, input().split()))
+#is_even = lambda x: x % 2 == 0
+#result = list(filter(is_even, list_of_numbers))
+#print(result)
+#
+#
+####### FOURTH WAY ##############
+
+print([int(number) for number in input().split() if int(number) % 2 == 0])
