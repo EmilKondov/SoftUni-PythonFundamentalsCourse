@@ -1,11 +1,19 @@
-def perfect_number(some_number: int) -> str:
-    divisor_sum = 0
-    for divisor in range(1, some_number):
-        if some_number % divisor == 0:
-            divisor_sum += divisor
-    if some_number == divisor_sum:
-        return  "We have a perfect number!"
-    return "It's not so perfect."
+def check(some_number):
+    if some_number == some_number[::-1]:
+        return True
+    return False
 
-given_number = int(input())
-print(perfect_number(given_number))
+numbers = input().split(", ")
+for number in numbers:
+    print(check(number))
+
+
+#def check_palindrome(some_number):
+#    if some_number == some_number[::-1]:
+#        return True
+#    return False
+#
+#numbers = input().split(", ")
+#for number in numbers:
+#    print(check_palindrome(number))
+#
