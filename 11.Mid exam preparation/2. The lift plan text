@@ -1,0 +1,9 @@
+1. Read/Receive the number of people waiting - I will use comprehension to get a integer list
+2. Read cabins current state from the console
+3. Iterate over every cabin and put as much people as possible in it. (max is 4)
+    - Find free spaces in cabin (MAX size - current state of cabin)
+    - fill the cabin
+    - Decrease the queu of waiting people
+    - Check if there are no more people or cabins.
+
+
