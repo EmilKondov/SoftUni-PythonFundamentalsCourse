@@ -1,0 +1,9 @@
+1.Receive initial energy
+2.Creata a variable that keeps track of the won battles
+3. While we have energy or untill we receive End of game
+    - read distance from console
+4. Check if distance is less then energy
+    - increase won battles with 1
+    - decrease energy with distance
+    - check if battle is third
+      - increase energy with battles count
