@@ -1,0 +1,5 @@
+1.Read from console list of number (use comprehension)
+2. Find the average value for the list
+3. Find the numbers larger than the average value and add them to a list
+4.Sort the list
+5.Print the result
