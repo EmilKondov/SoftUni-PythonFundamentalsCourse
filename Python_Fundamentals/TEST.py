@@ -47,12 +47,38 @@
 ###########################################################
 
 
-initial_string = input()
+#initial_string = input()
+#
+#final_list = []
+#for i in range(len(initial_string)):
+#    current_letter = initial_string[i]
+#    if 65 <= ord(current_letter) <= 90:
+#        final_list.append(i)
+#
+#print(final_list)
+#
 
-final_list = []
-for i in range(len(initial_string)):
-    current_letter = initial_string[i]
-    if 65 <= ord(current_letter) <= 90:
-        final_list.append(i)
+def decipher_message(secret_message):
+    words = secret_message.split()
 
-print(final_list)
+    deciphered_words = []
+    for word in words:
+        if len(word) >= 2:
+            # Swap the second and last letters
+            new_word = word[0] + word[-1] + word[2:-1] + word[1]
+            # Replace the first letter with its character code
+            first_letter_code = str(ord(word[0]))
+            new_word = first_letter_code + new_word[1:]
+
+            deciphered_words.append(new_word)
+        else:
+            # If the word has only one letter, keep it unchanged
+            deciphered_words.append(word)
+
+    deciphered_message = ' '.join(deciphered_words)
+    return deciphered_message
+
+# Example usage:
+secret_message = input()
+deciphered_message = decipher_message(secret_message)
+print(deciphered_message)
