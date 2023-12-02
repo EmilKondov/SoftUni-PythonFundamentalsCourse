@@ -1,8 +1,4 @@
-import math
 secret_message = input().split()
-
-ascii_table_code = []
-
 for word in secret_message:
     list_of_numbers = []
     list_of_letters = []
