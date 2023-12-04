@@ -1,0 +1,6 @@
+1. Read the console input and turn it into a list of strings using split function
+2. Read the command as an input while you receive "3:1".
+3. In while loop split the received command into a list. By using indexing index[0] whill be the action/command, index[1] will be index or starIndex and index[2]
+will be either the endindex or the partition depending on the command in index[0] which means we will use conditional construction inside the while loop.
+4. Creat functions for the different commands
+5.Print
