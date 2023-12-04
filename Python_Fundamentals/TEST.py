@@ -1,15 +1,16 @@
-text = input()
-sum = 0
+import sys
 
-for i in range(len(text)):
-    if text[i] == "a":
-        sum +=1
-    if text[i] == "e":
-        sum+= 2
-    if text[i] == "i":
-        sum += 3
-    if text[i] == "o":
-        sum += 4
-    if text[i] == "u":
-        sum += 5
-print(sum)
+smallest = sys.maxsize
+biggest = -sys.maxsize
+n = int(input())
+max_number = 0
+min_number = 0
+
+for number in range(n):
+    number = int(input())
+    if number < smallest:
+        smallest = number
+    elif number > biggest:
+        biggest = number
+print(f"Max number: {biggest}")
+print(f"Min number: {smallest}")
