@@ -1,16 +1,12 @@
-import sys
+numbers = input().split()
+string_text = input()
 
-smallest = sys.maxsize
-biggest = -sys.maxsize
-n = int(input())
-max_number = 0
-min_number = 0
+msg_show = ""
+for num in numbers:
+    find_index = sum([int(s_num) for s_num in num])
+    if find_index >= len(string_text):
+        find_index = find_index - len(string_text)
+    msg_show += string_text[find_index]
+    string_text = string_text[:find_index] + string_text[find_index + 1:]
 
-for number in range(n):
-    number = int(input())
-    if number < smallest:
-        smallest = number
-    elif number > biggest:
-        biggest = number
-print(f"Max number: {biggest}")
-print(f"Min number: {smallest}")
+print(msg_show)
