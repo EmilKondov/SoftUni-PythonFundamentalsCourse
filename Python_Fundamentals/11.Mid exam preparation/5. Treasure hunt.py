@@ -1,18 +1,24 @@
-def loot(loot_items, first_item, second_item, third_item):
-    for item in loot_items:
-        if first_item != item:
-            loot_items.insert(loot_items.index([0]), first_item)
-        elif second_item != item:
-            loot_items.insert(second_item, loot_items[0])
-        elif third_item != item:
-            loot_items.insert(third_item, loot_items[0])
-    return loot_items
+def loot(loots, list_items):
+    for item in list_items:
+        if item not in loots:
+            loots.insert(0, item)
+    return loots
 
-def drop(loot_items, index):
-    pass
+def drop(loots, target_index):
+    if target_index in range(len(loots)):
+        removed_loot = loots.pop(target_index)
+        loots.append(removed_loot)
+    return loots
 
-def steal(loot_items, count):
-    pass
+def steal(loots, count_of_steal):
+    if count_of_steal >= len(loots):
+        print(",".join(loots))
+        loots = []
+    else:
+        steal_index = len(loots) - count_of_steal
+        print(", ".join(loots[steal_index:]))
+        loots = loots[0:steal_index]
+    return loots
 
 loot_items = input().split("|")
 command = input()
@@ -20,12 +26,18 @@ while command != "Yohoho!":
     command = command.split()
     action = command[0]
     if action == "Loot":
-        item1, item2, item3 = command[1], command[2], command[3]
-        loot_items = loot(loot_items, item1, item2, item3)
+        items = command[1:]
+        loot_items = loot(loot_items, items)
     elif action == "Drop":
-        index = command[1]
+        index = int(command[1])
         loot_items = drop(loot_items, index)
     elif action == "Steal":
-        count = command[1]
+        count = int(command[1])
         loot_items = steal(loot_items, count)
     command = input()
+
+if not loot_items:
+    print(f"Failed treasure hunt.")
+else:
+    average_gain = sum(len(item) for item in loot_items) / len(loot_items)
+    print(f"Average treasure gain: {average_gain:.2f} pirate credits.")
