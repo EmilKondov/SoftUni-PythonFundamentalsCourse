@@ -1,20 +1,19 @@
 class Zoo:
     __animals = 0
+
     def __init__(self, name):
         self.name = name
         self.mammals = []
         self.fishes = []
         self.birds = []
 
-
     def add_animal(self, species, name):
         if species == "mammal":
             self.mammals.append(name)
-        elif species =="fish":
+        elif species == "fish":
             self.fishes.append(name)
         elif species == "bird":
             self.birds.append(name)
-
 
         Zoo.__animals += 1
 
@@ -30,13 +29,15 @@ class Zoo:
         result += f"Total animals: {Zoo.__animals}"
         return result
 
+
 zoo_name = input()
 zoo = Zoo(zoo_name)
 count = int(input())
 
 for i in range(count):
-    animal = input().split()
-    species, name = animal
+    animal = input().split(" ")
+    species = animal[0]
+    name = animal[1]
     zoo.add_animal(species, name)
 
 info = input()
