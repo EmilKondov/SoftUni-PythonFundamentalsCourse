@@ -30,10 +30,9 @@ class Vehicle:
             return f"{self.model} {self.type} is on sale: {self.price}"
 
 vehicle_type = "car"
-model = "BMW"
-price = 30000
-vehicle = Vehicle(vehicle_type,
-model, price)
+model = "AUDI"
+price = 10000
+vehicle = Vehicle(vehicle_type,model, price)
 print(vehicle.buy(15000, "Peter"))
 print(vehicle.buy(35000, "George"))
 print(vehicle)
