@@ -7,4 +7,3 @@ matches = re.findall(pattern, names)
 
 for name in matches:
     print(name, end=" ")
-
