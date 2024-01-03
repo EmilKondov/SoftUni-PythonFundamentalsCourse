@@ -1,13 +1,18 @@
 people = input().split()
-k_skip = int(input())
+k = int(input())
 
-k_skip -= 1
-executed_people = []
-index = k_skip % len(people)
+k -= 1
+index = k % len(people)
+killed = []
 
 while len(people) > 1:
-    executed_people.append(people.pop(index))
-    index = (index + k_skip) % len(people)
+    killed.append(people.pop(index))
+    index = (index + k) % len(people)
+killed.append(people[0])
 
-executed_people.append(people[0])
-print((str(executed_people).replace(' ', '').replace('\'', '')))
+# result = "".join(killed).replace("", ",").strip(",")
+# print(f"[{result}]")
+
+### or
+
+print(str(killed).replace(" ", "").replace("\'", ""))
