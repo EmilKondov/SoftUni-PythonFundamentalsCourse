@@ -20,4 +20,3 @@ else:
 
 print(f"({math.floor(x)}, {math.floor(y)})")
 
-
