@@ -37,7 +37,7 @@ if b > d:
     second_point_of_line = x2, y2
 else:
     second_point_of_line = x4, y4
-    
+
 x = 0
 y = 0
 
@@ -71,3 +71,12 @@ longer_line = long_line(a, b, c, d)
 print(f"({math.floor(x)}, {math.floor(y)})")
 
 
+# You will be given the coordinates of four points. The first and the second pair of points form two different lines.
+# Create a function that prints the longer line in the format "({X1}, {Y1})({X2}, {Y2})" starting from the point
+# which is closer to the center of the coordinate system (0, 0). You can reuse the method that you wrote for the
+# previous problem. If the lines are of equal length, print only the first one. The resulting coordinates must be
+# formatted to the lower integer.
+
+#1. First find out which pair of point will form a longer line
+#2. Once you know the point of the longer line use the script from your previous task to find out which is closer to the center.
+#3. The one that is closer should be used as a starting point of the line
