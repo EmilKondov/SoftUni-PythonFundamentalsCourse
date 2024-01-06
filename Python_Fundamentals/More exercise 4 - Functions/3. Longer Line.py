@@ -1,74 +1,81 @@
-import math
-
-def long_line(a, b , c, d):
-    if a > c:
-
-    else:
-
-    if b > d:
-        pass
-    else:
-
-
+from math import floor, hypot
 
 x1 = float(input())
 y1 = float(input())
-a = abs(x1) + abs(y1)
+a = hypot(x1, y1)
 
 x2 = float(input())
 y2 = float(input())
-b = abs(x2) + abs(y2)
+b = hypot(x2, y2)
 
 x3 = float(input())
 y3 = float(input())
-c = abs(x3) + abs(y3)
+c = hypot(x3, y3)
 
 x4 = float(input())
 y4 = float(input())
-d = abs(x4) + abs(y4)
+d = hypot(x4, y4)
+
+def one_point(a, c):
+    if a > c:
+        point_of_line = x1, y1
+        return a
+    else:
+        point_of_line = x3, y3
+        return c
+
+def second_point(b, d):
+    if b > d:
+        second_point_of_line = x2, y2
+        return b
+    else:
+        second_point_of_line = x4, y4
+        return d
 
 
-if a > c:
-    point_of_line = x1, y1
+one_point_of_the_line = one_point(a, c)
+second_point_of_the_line = second_point(b, d)
+
+X1 = 0
+Y1 = 0
+
+X2 = 0
+Y2 = 0
+
+if abs(one_point_of_the_line) < abs(second_point_of_the_line):
+    if one_point_of_the_line == a:
+        X1 = x1
+        Y1 = y1
+    elif one_point_of_the_line == c:
+        X1 = x3
+        Y1 = y3
+
+    if second_point_of_the_line == d:
+        X2 = x4
+        Y2 = y4
+    elif second_point_of_the_line == b:
+        X2 = x2
+        Y2 = y2
+
 else:
-    point_of_line = x3, y3
+    if one_point_of_the_line == a:
+        X2 = x1
+        Y2 = y1
+    elif one_point_of_the_line == c:
+        X2 = x3
+        Y2 = y3
 
-if b > d:
-    second_point_of_line = x2, y2
-else:
-    second_point_of_line = x4, y4
+    if second_point_of_the_line == d:
+        X1 = x4
+        Y1 = y4
+    elif second_point_of_the_line == b:
+        X1 = x2
+        Y1 = y2
 
-x = 0
-y = 0
 
-if abs(x1) <= abs(x2) or \
-        abs(x1) <= abs(x2) or \
-        abs(x1) <= abs(x3) or \
-        abs(x1) <= abs(x4):
-    x = x1
-elif abs(x2) <= abs(x3) or \
-        abs(x2) <= abs(x4):
-    x = x2
-elif abs(x3) <= abs(x4):
-    x = x3
-else:
-    x = x2
+print(f"({X1:.0f}, {Y1:.0f})({X2:.0f}, {Y2:.0f})")
 
-if abs(y1) <= abs(y2) or \
-        abs(y1) <= abs(y2) or \
-        abs(y1) <= abs(y3) or \
-        abs(y1) <= abs(y4):
-    y = y1
-elif abs(y2) <= abs(y3) or \
-        abs(y2) <= abs(y4):
-    y = y2
-elif abs(y3) <= abs(y4):
-    y = y3
-else:
-    y = y2
 
-longer_line = long_line(a, b, c, d)
-print(f"({math.floor(x)}, {math.floor(y)})")
 
 
 # You will be given the coordinates of four points. The first and the second pair of points form two different lines.
