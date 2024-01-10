@@ -1,35 +1,20 @@
 sequence_of_strings = input().split()
 total_sum = 0
-alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-for text in sequence_of_strings:
-    current_string = text
-    if current_string[0].isupper():
-        number = current_string[1:-1]
-        for i in range(len(alphabet)):
-            if alphabet[i] == current_string[0]:
-                divisor = int(i + 1)
-                number = int(number) // divisor
-                total_sum += number
-    elif current_string[0].islower():
-        number = current_string[1:-1]
-        for i in range(len(alphabet)):
-            if alphabet[i].lower() == current_string[0]:
-                divisor = int(i + 1)
-                number = int(number) * divisor
-                total_sum += number
+for given_string in sequence_of_strings:
+    first_letter = given_string[0]
+    last_letter = given_string[-1]
+    current_number = int(given_string[1:-1])
+    if first_letter.isupper():
+        first_letter_position = ord(first_letter) - 64
+        total_sum += current_number / first_letter_position
+    elif first_letter.islower():
+        first_letter_position = ord(first_letter) - 96
+        total_sum += current_number * first_letter_position
 
-    if current_string[-1].isupper():
-        number = current_string[1:-1]
-        for i in range(len(alphabet)):
-            if alphabet[i] == current_string[-1]:
-                substracting_number = int(i + 1)
-                number = int(number) - substracting_number
-                total_sum += number
-    elif current_string[-1].islower():
-        number = current_string[1:-1]
-        for i in range(len(alphabet)):
-            if alphabet[i].lower() == current_string[-1]:
-                adding_number = int(i + 1)
-                number = int(number) + adding_number
-                total_sum += number
-print(total_sum)
+    if last_letter.isupper():
+        last_letter_position = ord(last_letter) - 64
+        total_sum -= last_letter_position
+    elif last_letter.islower():
+        last_letter_position = ord(last_letter) - 96
+        total_sum += last_letter_position
+print(f"{total_sum:.2f}")
