@@ -1,5 +1,2 @@
-numbers_list = [6, 2, 1, 4, 3, 5]
-sorted_numbers = sorted(numbers_list, key=lambda x: -x)
-
-print(sorted_numbers)
-
+alphabet = "A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z"
+print(alphabet.split(", "))
