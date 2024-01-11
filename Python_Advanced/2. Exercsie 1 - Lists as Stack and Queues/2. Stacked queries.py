@@ -1,30 +1,21 @@
 main_stack = []
-track_stack = []
-integer_n = int(input())
 
-for query in range(integer_n):
-    query = input().split()
-    if len(query) == 1:
-        action_code = query[0]
-    elif len(query) > 1:
-        action_code, value = query
-
+for _ in range(int(input())):
+    numbers_data = input().split()
+    action_code = numbers_data[0]
 
     if action_code == "1":
-        main_stack.append(value)
-        if len(main_stack) == 1:
-            track_stack.append(value)
-        if main_stack[-1] > track_stack[-1]:
-            track_stack.append(value)
-        else:
-            track_stack.append(track_stack[-1])
+        main_stack.append(numbers_data[1])
     elif action_code == "2":
-        main_stack.pop()
-        track_stack.pop()
+        if main_stack:
+            main_stack.pop()
     elif action_code == "3":
-        print(max(main_stack))
-        #print(track_stack[-1])
+        if main_stack:
+            print(max(main_stack))
     elif action_code == "4":
-        print(min(main_stack))
-while main_stack:
-    print(main_stack.pop(), end=" ")
+        if main_stack:
+            print(min(main_stack))
+
+main_stack.reverse()
+
+print(*main_stack, sep=", ")
