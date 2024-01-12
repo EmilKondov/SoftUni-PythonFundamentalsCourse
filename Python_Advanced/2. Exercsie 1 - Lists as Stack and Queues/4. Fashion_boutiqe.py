@@ -18,3 +18,22 @@ while stack_of_clothes:
 else:
     racks_counter += 1
 print(racks_counter)
+
+
+# ### Solutiuon 2 ###
+# from collections import deque
+# clothes = [int(x) for x in input().split()]
+# rack_capacity = int(input())
+# current_rack = rack_capacity
+#
+# rack_counter = 1
+#
+# while clothes:
+#     clothe = clothes.pop()
+#     if current_rack >= clothe:
+#         current_rack -= clothe
+#     else:
+#         rack_counter += 1
+#         current_rack = rack_capacity
+#         clothes.append(clothe)
+# print(rack_counter)
