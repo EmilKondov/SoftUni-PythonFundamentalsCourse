@@ -11,6 +11,7 @@ for _ in range(number_of_command_lines):
     action = line_input[0]
     order = line_input[1]
     numbers = line_input[2:]
+
     if action == "Add":
         if order == "First":
             for number in numbers:
@@ -28,7 +29,7 @@ for _ in range(number_of_command_lines):
                 if int(number) in sequences[2]:
                     sequences[2].remove(int(number))
     elif action == "Check":
-        if sequences[1].issubset(sequences[2]) or sequences[2].issubset(sequences[1]) :
+        if sequences[1].issubset(sequences[2]) or sequences[2].issubset(sequences[1]):
             print(True)
         else:
             print(False)
