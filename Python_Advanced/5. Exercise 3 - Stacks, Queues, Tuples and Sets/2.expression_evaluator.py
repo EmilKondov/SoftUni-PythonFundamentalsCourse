@@ -1,6 +1,7 @@
 from collections import deque
+from math import floor
 
-string_input = deque(x for x in input().split())
+string_input = deque(input().split())
 
 for element in string_input:
     if element == "+":
