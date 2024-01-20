@@ -25,7 +25,7 @@ for row in range(size):
 for command in commands:
     r, c = miner_pos[0] + directions[command][0], miner_pos[1] + directions[command][1]
 
-    if not (0 <= r <= size and 0 <= c <= size):
+    if not (0 <= r < size and 0 <= c < size):
         continue
 
     miner_pos = [r, c]
@@ -33,11 +33,10 @@ for command in commands:
     if matrix[r][c] == "c":
         collected_coal += 1
 
-
-
         if collected_coal == total_coal:
             print(f"You collected all coal! ({r}, {c})")
             break
+
     elif matrix[r][c] == "e":
         print(f"Game over! ({r}, {c})")
         break
