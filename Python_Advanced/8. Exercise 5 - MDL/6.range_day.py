@@ -3,7 +3,7 @@ matrix = [[x for x in input().split()] for x in range(rows)]
 count_of_commands = int(input())
 
 for command in range(count_of_commands):
-    
+
 
 
 
