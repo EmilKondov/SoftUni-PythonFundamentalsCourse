@@ -1,3 +1,4 @@
+    #1
 # sequence_of_numbers = list(map(float, input().split()))
 #
 # list_of_abs_values = []
@@ -8,8 +9,7 @@
 # print(list_of_abs_values)
 
 
-# Or
-
+    #2 Or
 # numbers = input().split()
 #
 # list_of_absolute_values = []
@@ -19,6 +19,5 @@
 #
 # print(list_of_absolute_values)
 
-# OR by using a comprehension
-
+    #3 OR by using a comprehension
 absolute_values = print([abs(float(x)) for x in input().split()])
