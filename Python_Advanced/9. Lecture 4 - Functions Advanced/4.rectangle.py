@@ -1,20 +1,12 @@
-def rectangle(*args):
-    lenght, width = args
-    for el in args:
-        if type(el) is not int or el <= 0:
-            print("Enter a valid value!")
-            exit()
+def rectangle(length, width):
+    if not isinstance(length, int) or not isinstance(width, int):
+        return "Enter a valid value!"
 
-    def area(lenght, width):
-        return lenght * width
+    def area():
+        return length * width
 
-    def perimeter(lenght, width):
-        return (lenght + width) * 2
+    def perimeter():
+        return (length + width) * 2
 
-    return f"""
-Rectangle area: {area(lenght, width)}
-Rectangle perimeter: {perimeter(lenght, width)}
-"""
-
+    return f"Rectangle area: {area()}\nRectangle perimeter: {perimeter()}"
 print(rectangle(2, 10))
-#print(rectangle('2', 10))
