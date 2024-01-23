@@ -10,7 +10,7 @@ def check_valid_position():
 
 rows, columns = [int(x) for x in input().split()]
 matrix = [list(input()) for _ in range(rows)]
-commands = input() 
+commands = input()
 win = False
 
 player_row, player_column = player_position()
