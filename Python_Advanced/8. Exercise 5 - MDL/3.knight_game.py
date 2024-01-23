@@ -13,28 +13,28 @@ possitions = (
 )
 removed_knights = 0
 while True:
-    max_attacks = 0
-    knights_with_most_attacks = []
+    max_attacks = 0                                                 # Тук събираме броя на атаките на коня, който е направил най-много атаки до момента
+    knights_with_most_attacks = []                                  # Тук ще съхраним позицията на коня с най-много атаки
 
-    for row in range(size):
+    for row in range(size):                                         # Обхождаме матрицата елемент по елемент
         for col in range(size):
-            if board[row][col] == "K":
-                attacks = 0
+            if board[row][col] == "K":                              # Съответно проверяваме за всеки елемент дали на негото място има конник.
+                attacks = 0                                         # Тук преброяваме атаките на конкретни кон като послед ще ги сравним с max_attacks
 
-                for pos in possitions:
-                    for_row = row + pos[0]
-                    for_col = col + pos[1]
+                for pos in possitions:                              # Тук правим цикъл, чрез който прилагаме Г шаблона на движение за всеки кон, който открием.
+                    for_row = row + pos[0]                          # съответно, ако позицията добавена към тази на нашия кон ни отведе при друг кон "K" то значи
+                    for_col = col + pos[1]                          # въпросния кон осъществява атака.
 
-                    if 0 <= for_row < size and 0 <= for_col < size:
-                        if board[for_row][for_col] == "K":
+                    if 0 <= for_row < size and 0 <= for_col < size: # За да избегнем IndexError валидираме координатите преди да ги приложим.
+                        if board[for_row][for_col] == "K":          # Ако са валидни и ако ни отвеждат до "K" то атаката е реалност и добавяме +1 към attacks.
                             attacks += 1
 
-                if attacks > max_attacks:
-                    knights_with_most_attacks = [row, col]
-                    max_attacks = attacks
-    if knights_with_most_attacks:
-        r, c = knights_with_most_attacks
-        board[r][c] = 0
+                if attacks > max_attacks:                           # Ако броя на атаките на конкретни кон са повече от тези на предишен кон до момента.
+                    knights_with_most_attacks = [row, col]          # то присвояваме координатите на въпросния кон(там, където е намерен) за кон с най-много атаки.
+                    max_attacks = attacks                           # съответно и обновяваме информацията в max_attacks с новия по-голям брой от атаки на последния кон.
+    if knights_with_most_attacks:                                   # Когато преминем през цялата матрица и сме открили коня с най-много атаки ние сме запазили неговата информация.
+        r, c = knights_with_most_attacks                            # Съответно проверяваме дали има такъв кон или не, тъй като в матрицата може да няма кон, който да напрада други.
+        board[r][c] = 0                                             # Ако има за по-кратко взимаме координатите му чрез r - row, c- column, за да го премахнем от матрицата
         removed_knights += 1
     else:
         break
