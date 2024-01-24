@@ -63,13 +63,30 @@
 # print(rectangle('2', 10))
 
 
-#5 Recursive Power
+# #5 Recursive Power
+#
+# def recursive_power(number, power):
+#     result = 1
+#     if power == 0:
+#         return result
+#     result = number * recursive_power(number, power -1)
+#     return result
+#
+# print(recursive_power(2, 10))
 
-def recursive_power(number, power):
-    result = 1
-    if power == 0:
-        return result
-    result = number * recursive_power(number, power -1)
-    return result
 
-print(recursive_power(2, 10))
+#6 Operate
+from functools import reduce
+def operate(operator, *args):
+    if operator == "+":
+        return reduce(lambda x, y: x+ y, args)
+    elif operator == "-":
+        return reduce(lambda x, y: x - y, args)
+    elif operator == "*":
+        return reduce(lambda x, y: x * y, args)
+    elif operator == "/":
+        return reduce(lambda x, y: x / y, args)
+
+
+
+print(operate("+", 1, 2, 3))
