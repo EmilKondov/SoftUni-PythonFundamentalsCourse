@@ -46,17 +46,30 @@
 
 #4 rectangle
 
-def rectangle(length, width):
-    if not isinstance(length, int) and not isinstance(width, int):
-        return f"Enter valid values!"
+# def rectangle(length, width):
+#     if not isinstance(length, int) or not isinstance(width, int):
+#         return f"Enter valid values!"
+#
+#     def area():
+#         return length * width
+#
+#     def perimeter():
+#         return 2 * (length + width)
+#
+#     return f"Rectangle area: {area()}\nRectangle perimeter: {perimeter()}"
+#
+#
+# print(rectangle(2, 10))
+# print(rectangle('2', 10))
 
-    def area():
-        return length * width
 
-    def perimeter():
-        return 2 * (length + width)
+#5 Recursive Power
 
-    return f"Rectangle area: {area()}\nRectangle perimeter: {perimeter()}"
+def recursive_power(number, power):
+    result = 1
+    if power == 0:
+        return result
+    result = number * recursive_power(number, power -1)
+    return result
 
-
-print(rectangle(2, 10))
+print(recursive_power(2, 10))
