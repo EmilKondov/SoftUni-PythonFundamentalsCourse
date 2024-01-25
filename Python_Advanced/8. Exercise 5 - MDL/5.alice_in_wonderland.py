@@ -1,3 +1,4 @@
+# input data
 size = int(input())
 
 matrix = []
@@ -11,14 +12,14 @@ directions = {
     "left": (0,-1),
     "right": (0, 1)
 }
-
+# check each row to find alice position and add it to the matrix
 for row in range(size):
     matrix.append(input().split())
 
     if "A" in matrix[row]:
         alice_position = row, matrix[row].index("A")   # провери дали това остава така или трябва да го запазиш на момент кат олист от два елемента.
         matrix[row][alice_position[1]] = "*"
-
+#We start moving through the 
 while tea_bags < 10:
     command = input()
     r, c = alice_position[0] + directions[command][0], alice_position[1] + directions[command][1]
