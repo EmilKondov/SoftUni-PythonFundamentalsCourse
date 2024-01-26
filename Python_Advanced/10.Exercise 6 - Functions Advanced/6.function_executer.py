@@ -1,9 +1,17 @@
+# def func_executor(*funcs_data):
+#     result = []
+#
+#     for func, args in funcs_data:
+#         result.append(f"{func.__name__} - {func(*args)}")       # тук разопаковаме args, което е value-to в съотвяетние key-value pair ,
+#     return "\n".join(result)                                                          # за да може съответните аргументи num1, num2 да отидат към съответните параметри
+
+### Second solution ###
+
 def func_executor(*funcs_data):
     result = []
 
-    for func, args in funcs_data:
-        result.append(f"{func.__name__} - {func(*args)}")       # тук разопаковаме args, което е value-to в съотвяетние key-value pair ,
-    return "\n".join(result)                                                          # за да може съответните аргументи num1, num2 да отидат към съответните параметри
+    return "\n".join([f"{func.__name__} - {func(*args)}" for func, args in funcs_data])
+
 
 
 def sum_numbers(num1, num2):
