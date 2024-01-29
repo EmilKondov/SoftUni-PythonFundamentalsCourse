@@ -16,7 +16,7 @@ while line != "Remove":
     searched = line
     searched_numbers_as_text = input()
     try:
-        print(numbers_dictionary[searched_numbers_as_text])
+        print(numbers_dictionary[searched_numbers_as_text], end="")
     except KeyError:
         print(numbers_dictionary)
     line = input()
@@ -27,6 +27,6 @@ while line != "End":
     try:
         del numbers_dictionary[searched_text_number]
     except KeyError:
-        print("Number does not exist in dictionary")
+        print("Number does not exist in dictionary", end="")
     line = input()
 print(numbers_dictionary)
