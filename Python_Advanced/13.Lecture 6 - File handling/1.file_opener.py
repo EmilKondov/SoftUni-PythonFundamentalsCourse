@@ -1,5 +1,9 @@
+import os
+
+file_name = "text.txt"
+
 try:
-    text_file = open("text.txt", "r")
+    file = open("text.txt", "r")
     print("File found")
 except FileNotFoundError:
     print("File not found")
