@@ -30,27 +30,30 @@ while total_cheese:
     command = input()
 
     if command == "danger" and total_cheese:
+        matrix[row][col] = "M"
         print("Mouse will come back later!")
-        exit()
+        break
 
     row = mouse_position[0] + directions[command][0]
     col = mouse_position[1] + directions[command][1]
 
     if valid_position(row, col):
         if matrix[row][col] == "@":
-            continue                  
+            continue
+
         if matrix[row][col] == "*":
              mouse_position = [row, col]
+
         elif matrix[row][col] == "C":
             total_cheese -= 1
             mouse_position = [row, col]
-
             if total_cheese == 0:
                 matrix[row][col] = "M"
                 print("Happy mouse! All the cheese is eaten, good night!")
                 break
             else:
                 matrix[row][col] = "*"
+
         elif matrix[row][col] == "T":
             matrix[row][col] = "M"
             print("Mouse is trapped!")
