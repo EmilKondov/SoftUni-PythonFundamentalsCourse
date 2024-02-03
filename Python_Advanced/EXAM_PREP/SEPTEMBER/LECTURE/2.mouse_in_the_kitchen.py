@@ -30,7 +30,7 @@ while total_cheese:
     command = input()
 
     if command == "danger" and total_cheese:
-        matrix[row][col] = "M"
+        matrix[mouse_position[0]][mouse_position[1]] = "M"
         print("Mouse will come back later!")
         break
 
@@ -58,6 +58,7 @@ while total_cheese:
             matrix[row][col] = "M"
             print("Mouse is trapped!")
             break
+
     else:
         matrix[mouse_position[0]][mouse_position[1]] = "M"
         print("No more cheese for tonight!")
