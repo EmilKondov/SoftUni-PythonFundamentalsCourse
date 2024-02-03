@@ -5,19 +5,17 @@ substances = [int(x) for x in input().split()]
 challenges = [int(y) for y in input().split()]
 
 while challenges:
-    result = 0
-
     if not tools or not substances:
         print("Harry is lost in the temple. Oblivion awaits him.")
         break
 
+    result = 0
     current_tool = tools.popleft()
     current_substance = substances.pop()
     result = current_tool * current_substance
 
     if result in challenges:
         challenges.remove(result)
-
     else:
         current_tool += 1
         tools.append(current_tool)
@@ -27,7 +25,6 @@ while challenges:
             continue
         else:
             substances.append(current_substance)
-
 else:
     print("Harry found an ostracon, which is dated to the 6th century BCE.")
 
