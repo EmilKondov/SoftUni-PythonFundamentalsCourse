@@ -8,7 +8,6 @@ hazelnuts = 0
 
 for row in range(size):
     matrix.append(list(input()))
-
     if "s" in matrix[row]:
         squirrel_position = [row, matrix[row].index("s")]
         matrix[row][squirrel_position[1]] = "*"
@@ -19,7 +18,6 @@ directions = {
     "left": (0, -1),
     "right": (0, 1),
 }
-
 for command in commands:
     if hazelnuts >= 3:
         break
@@ -37,6 +35,7 @@ for command in commands:
 
     if matrix[r][c] == "h":
         hazelnuts += 1
+        matrix[r][c] = "*"
 
     elif matrix[r][c] == "t":
         print("Unfortunately, the squirrel stepped on a trap...")
