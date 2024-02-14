@@ -14,14 +14,16 @@ for index in range(1, n + 1):
     current_consumption = additional_consumption[0]
     current_needed_fuel = needed_fuel[0]
 
-    if current_fuel - current_consumption >= current_needed_fuel:
+    if abs(current_fuel - current_consumption) >= current_needed_fuel:
         fuel_collection.pop()
         additional_consumption.popleft()
         needed_fuel.popleft()
         altitudes.append(f"Altitude {index}")
         print(f"John has reached: Altitude {index}")
 
-
+    elif abs(current_fuel - current_consumption) < current_needed_fuel and not altitudes:
+        print("John failed to reach the top.John didn't reach any altitude.")
+        exit()
     else:
         print(f"John did not reach: Altitude {index}")
         print(f"John failed to reach the top.")
