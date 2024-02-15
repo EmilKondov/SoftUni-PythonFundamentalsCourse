@@ -29,11 +29,12 @@ for row in range(size):
 
 ### Logic
 
-command = input()
-while command != "end":
+direction = input()
 
-    gambler_next_row = gambler_position[0] + directions[command][0]
-    gambler_next_col = gambler_position[1] + directions[command][1]
+while direction != "end":
+
+    gambler_next_row = gambler_position[0] + directions[direction][0]
+    gambler_next_col = gambler_position[1] + directions[direction][1]
 
     if not (0 <= gambler_next_row < size and 0 <= gambler_next_col < size) or total_amount <= 0:
         print("Game over! You lost everything!")
@@ -59,9 +60,9 @@ while command != "end":
             total_amount += 100
         elif matrix[r][c] == "P":
             total_amount -= 200
-    #тук съм сигурен, че след себе играча сме оставили "-"
+
     matrix[r][c] = "-"
-    command = input()
+    direction = input()
 
 
 if jackpot_win:
@@ -92,4 +93,4 @@ if jackpot_win:
 # down
 # down
 # right
-# en
+# end
