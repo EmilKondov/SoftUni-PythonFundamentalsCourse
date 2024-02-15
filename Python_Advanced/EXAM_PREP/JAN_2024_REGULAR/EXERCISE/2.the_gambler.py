@@ -8,7 +8,8 @@ gambler_position = []
 initial_amount = 100
 total_amount = initial_amount
 
-jackpot_win = False
+jackpot = False
+
 #дефинираме посоки
 directions = {
     "up": (-1, 0),
@@ -36,9 +37,9 @@ while direction != "end":
     gambler_next_row = gambler_position[0] + directions[direction][0]
     gambler_next_col = gambler_position[1] + directions[direction][1]
 
-    if not (0 <= gambler_next_row < size and 0 <= gambler_next_col < size) or total_amount <= 0:
+    if not (0 <= gambler_next_row < size and 0 <= gambler_next_col < size):
         print("Game over! You lost everything!")
-        break
+        exit()
 
     r, c = gambler_next_row, gambler_next_col
     gambler_position = [r, c]
@@ -49,48 +50,25 @@ while direction != "end":
         matrix[r][c] = "G"
         print(f"You win the Jackpot!\n"
               f"End of the game. Total amount: {total_amount}$")
-        jackpot_win = True
+        [print(*row, sep="") for row in matrix]
+        jackpot = True
         break
 
     #тук проверяваме всички случаи, които не прекратяват играта
     else:
-        if matrix[r][c] == "-":
-            continue
-        elif matrix[r][c] == "W":
+        if matrix[r][c] == "W":
             total_amount += 100
         elif matrix[r][c] == "P":
             total_amount -= 200
 
+    if total_amount <= 0:
+        print("Game over! You lost everything!")
+        exit()
+
     matrix[r][c] = "-"
     direction = input()
 
-
-if jackpot_win:
+matrix[r][c] = "G"
+if not jackpot:
     print(f"End of the game. Total amount: {total_amount}$")
-    [print(*row) for row in matrix]
-
-# 4
-# G---
-# WWWW
-# P---
-# PJ--
-# right
-# right
-# right
-# down
-# left
-# left
-# end
-
-
-# 4
-# ---G
-# W-W-
-# ---P
-# --JW
-# left
-# down
-# down
-# down
-# right
-# end
+    [print(*row, sep="") for row in matrix]
