@@ -1,18 +1,13 @@
 from collections import deque
-#defining the number of altitudes
-# N = 4
-
 
 #Read the sequences under the correct type
 fuel_collection = [int(x) for x in input().split()]
 additional_consumption = deque([int(y) for y in input().split()])
 needed_fuel = deque([int(z) for z in input().split()])
 
-# altitudes = []
 altitude_count = 0
-# failed = False
 
-# for index in range(1, N + 1):
+
 while fuel_collection and additional_consumption and needed_fuel:
     current_fuel = fuel_collection[-1]
     current_consumption = additional_consumption[0]
