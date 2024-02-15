@@ -8,6 +8,7 @@ gambler_position = []
 initial_amount = 100
 total_amount = initial_amount
 
+#създаваме си флаг
 jackpot = False
 
 #дефинираме посоки
@@ -37,10 +38,12 @@ while direction != "end":
     gambler_next_row = gambler_position[0] + directions[direction][0]
     gambler_next_col = gambler_position[1] + directions[direction][1]
 
+    #тук проверяваме дали бъдещата позиция е в матрицата и е валидна, ако не е прекратяваме програмата
     if not (0 <= gambler_next_row < size and 0 <= gambler_next_col < size):
         print("Game over! You lost everything!")
         exit()
 
+    #ако горната проверка е успешна, за по-кратко приемаме r, c за новите валидни координати и ги присвояваме за последна акутална позиция на играча. До края на тази итерация работим с тях [r, c]
     r, c = gambler_next_row, gambler_next_col
     gambler_position = [r, c]
     # трябва да сложиш "-", където е минал
