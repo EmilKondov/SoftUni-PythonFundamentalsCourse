@@ -1,5 +1,4 @@
 ### Input
-
 size =int(input())
 
 matrix = []
@@ -28,11 +27,9 @@ for row in range(size):
         matrix[row][matrix[row].index("G")] = "-"
 
 
-
 ### Logic
 
 direction = input()
-
 while direction != "end":
 
     gambler_next_row = gambler_position[0] + directions[direction][0]
@@ -58,12 +55,10 @@ while direction != "end":
         break
 
     #тук проверяваме всички случаи, които не прекратяват играта
-    else:
-        if matrix[r][c] == "W":
-            total_amount += 100
-        elif matrix[r][c] == "P":
-            total_amount -= 200
-
+    elif matrix[r][c] == "W":
+        total_amount += 100
+    elif matrix[r][c] == "P":
+        total_amount -= 200
     if total_amount <= 0:
         print("Game over! You lost everything!")
         exit()
