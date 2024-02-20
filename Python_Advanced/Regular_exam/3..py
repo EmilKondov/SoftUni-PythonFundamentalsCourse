@@ -1,20 +1,20 @@
-def cookbook(*elements):
-    sorted_cuisine = {}
+def cookbook(*recipes):
+    cuisine_dict = {}
 
-    for recipe, cuisine, ingredients in elements:
-        if cuisine not in sorted_cuisine:
-            sorted_cuisine[cuisine] = []
-        sorted_cuisine[cuisine].append(recipe)
-        sorted_cuisine[cuisine].append(ingredients)
+    for recipe in recipes:
+        name, cuisine, ingredients = recipe
+        if cuisine not in cuisine_dict:
+            cuisine_dict[cuisine] = []
+        cuisine_dict[cuisine].append((name, ingredients))
 
-    sorted_cuisine = dict(sorted(sorted_cuisine.items(), key=lambda x: (-len(x[1]), (x[0]))))
+    sorted_cuisine = sorted(cuisine_dict.items(), key=lambda x: (-len(x[1]), (x[0])))
 
-    result = ''
-    for cuisine, recipe in sorted_cuisine.items():
-        sorted_recipe = sorted(recipe, key=lambda x: x[0])
-        result += f"{cuisine} - {len(recipe)}\n"
-        for name in sorted_recipe:
-            result += f"  *{name} -> Ingredients:{','.join(recipe[1])}\n"
+    result = []
+    for cuisine in sorted_cuisine:
+        sorted_recipe = sorted(cuisine_dict[cuisine], key=lambda x: x[0])
+        result.append(f"{cuisine} cuisine contains {len(sorted_recipe)} recipies:")
+        for name, ingredients in sorted_recipe:
+            result.append(f"  *{name} -> Ingredients:{','.join()}\n")
     return result.strip()
 
 
