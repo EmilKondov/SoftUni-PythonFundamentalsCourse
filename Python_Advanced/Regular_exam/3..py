@@ -7,15 +7,17 @@ def cookbook(*recipes):
             cuisine_dict[cuisine] = []
         cuisine_dict[cuisine].append((name, ingredients))
 
-    sorted_cuisine = sorted(cuisine_dict.items(), key=lambda x: (-len(x[1]), (x[0])))
+    #it is import to sort only KEYS cuisinte_dict.keys() instead of items!
+    sorted_cuisine = sorted(cuisine_dict.keys(), key=lambda x: (-len(x[1]), (x[0])))
 
     result = []
     for cuisine in sorted_cuisine:
         sorted_recipe = sorted(cuisine_dict[cuisine], key=lambda x: x[0])
-        result.append(f"{cuisine} cuisine contains {len(sorted_recipe)} recipies:")
+        result.append(f"{cuisine} cuisine contains {len(sorted_recipe)} recipes:")
         for name, ingredients in sorted_recipe:
-            result.append(f"  *{name} -> Ingredients:{','.join()}\n")
-    return result.strip()
+            result.append(f"  *{name} -> Ingredients:{','.join(ingredients)}")
+
+    return "\n.".join(result)
 
 
 print(cookbook(
