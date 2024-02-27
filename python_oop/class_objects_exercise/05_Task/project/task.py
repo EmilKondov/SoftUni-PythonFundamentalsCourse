@@ -4,21 +4,20 @@ class Task:
         self.due_date = due_date
         self.comments = []
         self.completed = False
-        self.tasks = []
 
     def change_name(self, new_name: str):
         if new_name == self.name:
             return "Name cannot be the same."
 
         self.name = new_name
-        return new_name
+        return self.name
 
     def change_due_date(self, new_date: str):
         if new_date == self.due_date:
             return "Date cannot be the same."
 
         self.due_date = new_date
-        return new_date
+        return self.due_date
 
     def add_comment(self, comment: str):
         self.tasks.append(comment)
