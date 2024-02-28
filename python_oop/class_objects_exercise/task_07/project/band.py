@@ -10,7 +10,7 @@ class Band:
 
     def add_album(self, album: Album):
         if album in self.albums:
-            return f"Band {self.name} already has {album} in their library."
+            return f"Band {self.name} already has {album.name} in their library."
 
         self.albums.append(album)
         self.published = True
@@ -33,15 +33,3 @@ class Band:
         album_details = "\n".join(a.details() for a in self.albums)
         return f"Band {self.name}\n"\
                f"{album_details}"
-
-song = Song("Running in the 90s", 3.45, False)
-print(song.get_info())
-album = Album("Initial D", song)
-second_song = Song("Around the World", 2.34, False)
-print(album.add_song(second_song))
-print(album.details())
-print(album.publish())
-band = Band("Manuel")
-print(band.add_album(album))
-print(band.remove_album("Initial D"))
-print(band.details())
