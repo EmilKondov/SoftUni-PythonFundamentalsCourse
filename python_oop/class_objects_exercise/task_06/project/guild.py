@@ -27,11 +27,14 @@ class Guild:
         return f"Player {player_name} has been removed from the guild."
 
     def guild_info(self):
-        # guild_info = Player.player_info(self)
         guild_info = "\n".join(player.player_info() for player in self.players)
         return f"Guild: {self.name}\n"\
                f"{guild_info}"
 
 
-
-
+player = Player("George", 50, 100)
+print(player.add_skill("Shield Break", 20))
+print(player.player_info())
+guild = Guild("UGT")
+print(guild.assign_player(player))
+print(guild.guild_info())
