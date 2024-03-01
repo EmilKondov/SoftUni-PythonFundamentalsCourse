@@ -1,7 +1,8 @@
 class Player:
-    def __init__(self, name: str, hp: int):
+    def __init__(self, name: str, hp: int, mp: int):
         self.name = name
         self.hp = hp
+        self.mp = mp
         self.skills = {}
         self.guild = "Unaffiliated"
 
@@ -13,7 +14,13 @@ class Player:
         return f"Skill {skill_name} added to the collection of the player {self.name}"
 
     def player_info(self):
-        info = "\n".join(f"==={s} - {m}" for s, m in self.skills)
-        return f"Name: {self.name}"\
-                f"Guild: {self.guild}"\
+        skills_list = []
+        info = "\n".join(f"==={s} - {m}" for s, m in self.skills.items())
+        return f"Name: {self.name}\n"\
+                f"Guild: {self.guild}\n"\
+                f"HP: {self.hp}\n"\
+                f"MP: {self.mp}\n"\
                 f"{info}"
+
+
+
