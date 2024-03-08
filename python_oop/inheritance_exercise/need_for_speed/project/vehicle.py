@@ -1,0 +1,2 @@
+class Vehicle:
+    DEFAULT_FUEL_CONSUMPTION
