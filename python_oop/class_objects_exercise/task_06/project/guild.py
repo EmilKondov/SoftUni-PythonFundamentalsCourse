@@ -23,7 +23,7 @@ class Guild:
             player = next(filter(lambda p: p.name == player_name, self.players))
         except StopIteration:
             return f"Player {player_name} is not in the guild."
-        
+
         player.guild = player.DEFAULT_GUILD
         self.players.remove(player)
         return f"Player {player_name} has been removed from the guild."
