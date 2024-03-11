@@ -31,5 +31,3 @@ class Profile:
 
     def __str__(self):
         return f'You have a profile with username: "{self.username}" and password: {"*" * len(self.password)}'
-
-profile_with_invalid_username = Profile('Too_long_username', 'Any')
