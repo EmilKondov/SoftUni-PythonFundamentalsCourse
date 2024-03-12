@@ -5,4 +5,4 @@ class Worker:
         self.salary = salary
 
     def __repr__(self) -> str:
-        return f"Name: {self.name}, Age: {self.age}, Salary: {selfsalary}"
+        return f"Name: {self.name}, Age: {self.age}, Salary: {self.salary}"
