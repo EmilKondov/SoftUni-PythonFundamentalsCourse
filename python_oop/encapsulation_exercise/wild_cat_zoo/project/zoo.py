@@ -27,7 +27,7 @@ class Zoo:
     def hire_worker(self, worker):
         if self.__workers_capacity > len(self.workers):
             self.workers.append(worker)
-            return f"{self.name} the {worker.__class__.__name__} hired successfully"
+            return f"{worker.name} the {worker.__class__.__name__} hired successfully"
         return f"Not enough space for worker"
 
     def fire_worker(self, worker_name):
