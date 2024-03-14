@@ -7,37 +7,37 @@ class Dough:
 
 # setter and getter for flour_type
     @property
-    def flour_types(self):
-        return self.flour_type
+    def flour_type(self):
+        return self.__flour_type
 
-    @flour_types.setter
-    def flour_types(self, value):
-        if value == None:
+    @flour_type.setter
+    def flour_type(self, value):
+        if value == "":
             raise ValueError("The flour type cannot be an empty string")
-        self.flour_type = value
+        self.__flour_type = value
 
 # setter and getter for baking_technique
 
     @property
     def baking_technique(self):
-        return self.baking_technique
+        return self.__baking_technique
 
     @baking_technique.setter
     def baking_technique(self, value):
-        if value == None:
+        if value == "":
             raise ValueError("The baking technique cannot be an empty string")
-        self.baking_technique = value
+        self.__baking_technique = value
 
 #setter and getter for weigh
 
     @property
     def weight(self):
-        return self.weight
+        return self.__weight
 
     @weight.setter
     def weight(self, value):
         if value <= 0:
             raise ValueError("The weight cannot be less or equal to zero")
-        self.weight = value
+        self.__weight = value
 
 

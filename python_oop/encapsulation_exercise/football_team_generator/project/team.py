@@ -1,7 +1,5 @@
 from typing import List, Union
-
 from football_team_generator.project.player import Player
-
 
 class Team:
     def __init__(self, name: str, rating: int):
@@ -18,7 +16,7 @@ class Team:
 
     def remove_player(self, player_name: str) -> Union[Player, str]: # Union означ
         try:
-            player = [p for p in self.__players if p.name == player_name][0]
+            player = [p for p in self.__players if p.name == player_name][0]  # чрез тази нула [0], казваме достъпи ми първи елемент в листа.
             self.__players.remove(player)
             return player
         except IndexError:

@@ -3,45 +3,46 @@ from project.topping import Topping
 
 
 class Pizza(Dough):
-    def __init__(self, name: str, dough: Dough, max_number_of_toppings: int, toppings: dict):
+    def __init__(self, name: str, dough: Dough, max_number_of_toppings: int):
         self.name = name
         self.dough = dough    #Dough ??? Not sure how to declare it here
         self.max_number_of_toppings = max_number_of_toppings
-        self.toppings = toppings
+        self.toppings = {}
+
 # setter and getter for name
     @property
     def name(self):
-        return self.name
+        return self.__name
 
     @name.setter
     def name(self, value):
-        if value == None:
+        if value == "":
             raise ValueError("The name cannot be an empty string")
-        self.name = value
+        self.__name = value
 
 # setter and getter for dough
     @property
     def dough(self):
-        return self.dough
+        return self.__dough
     
     @dough.setter
     def dough(self, value):
-        if value == None:
+        if value is None:
             raise ValueError("You should add dough to the pizza")
-        self.dough = value
+        self.__dough = value
 
 
 # setter and getter for max_number ....
 
     @property
     def max_number_of_toppings(self):
-        return self.max_number_of_toppings
+        return self.__max_number_of_toppings
 
     @max_number_of_toppings.setter
     def max_number_of_toppings(self, value):
         if value <= 0:
             raise ValueError("The maximum number of toppings cannot be less or equal to zero")
-        self.max_number_of_toppings = value
+        self.__max_number_of_toppings = value
 
 # # setter and getter for toppings
 #
@@ -57,12 +58,14 @@ class Pizza(Dough):
 # Methods of this class
 
     def add_topping(self, topping: Topping):
-        self.toppings[topping] = topping
-        if len(self.toppings) > self.max_number_of_toppings:
+        if len(self.toppings) >= self.max_number_of_toppings:
             raise ValueError("Not enough space for another topping")
-        elif topping in self.toppings:
-            topping.weight += self ### Не е довършено
-
+        if topping.topping_type in self.toppings:
+            self.toppings[topping.topping_type] += topping.weight
+        else:
+            self.toppings[topping.topping_type] = topping.weight
 
     def calculate_total_weight(self):
-        return (Dough.weight + Topping.weight)
+        toppings_weight = sum([t for t in self.toppings.values()])
+        pizza_weight = self.dough.weight + toppings_weight
+        return pizza_weight
