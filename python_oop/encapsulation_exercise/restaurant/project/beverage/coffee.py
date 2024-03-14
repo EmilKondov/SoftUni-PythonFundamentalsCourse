@@ -23,6 +23,6 @@ class Coffee(HotBeverage):
         super().__init__(name, Coffee.PRICE, Coffee.MILLILITERS)
         self.__caffeine = caffeine
 
-        @property
-        def caffeine(self):
-            return self.__caffeine
+    @property
+    def caffeine(self):
+        return self.__caffeine

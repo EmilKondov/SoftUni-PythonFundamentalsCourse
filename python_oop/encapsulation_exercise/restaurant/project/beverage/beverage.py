@@ -7,6 +7,6 @@ class Beverage(Product):
         super().__init__(name, price)
         self.__milliliters = milliliters
 
-        @property
-        def milliliters(self):
-            return self.__milliliters
+    @property
+    def milliliters(self):
+        return self.__milliliters
