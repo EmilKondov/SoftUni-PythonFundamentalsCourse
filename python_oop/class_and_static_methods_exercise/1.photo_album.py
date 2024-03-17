@@ -12,11 +12,11 @@ class PhotoAlbum:
 
     @classmethod
     def from_photos_count(cls, photos_count: int):
-        return cls(ceil(photos_count/ cls.PHOTOS_PER_PAGE))
+        return cls(ceil(photos_count / cls.PHOTOS_PER_PAGE))
 
     def add_photo(self, label: str):
         for page in range(self.pages):
-            if len(self.photos[page]) < 4:
+            if len(self.photos[page]) < self.PHOTOS_PER_PAGE:
                 slot = len(self.photos[page]) + 1
                 self.photos[page].append(label)
 
