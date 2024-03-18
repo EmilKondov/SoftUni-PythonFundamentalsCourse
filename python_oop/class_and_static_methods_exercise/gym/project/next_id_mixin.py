@@ -11,8 +11,6 @@ class NextIdMixin:
     ще вземе ID- то от този клас 
     
     """
-
-
     @classmethod
     def get_next_id(cls):
         return cls.id
