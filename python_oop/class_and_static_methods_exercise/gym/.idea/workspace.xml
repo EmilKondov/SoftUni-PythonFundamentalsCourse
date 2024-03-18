@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec50df9b-bf6e-4dcb-a002-b371fb2dcd7b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/exercise_plan.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/exercise_plan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/gym.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/gym.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/next_id_mixin.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/next_id_mixin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/subscription.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/subscription.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,13 +85,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/project/exercise_plan.py</url>
-          <line>6</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/project/test.py</url>
-          <line>24</line>
+          <line>26</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

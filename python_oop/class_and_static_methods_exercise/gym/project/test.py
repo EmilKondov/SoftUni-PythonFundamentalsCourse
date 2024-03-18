@@ -6,6 +6,8 @@ from project.subscription import Subscription
 from project.trainer import Trainer
 
 customer = Customer("John", "Maple Street", "john.smith@gmail.com")
+customer2 = Customer("Dragan", "Izgrev Mahala Street", "dragan.smith@gmail.com")
+customer3 = Customer("Petkan", "Slaveikov Mahala Street", "petkan.smith@gmail.com")
 equipment = Equipment("Treadmill")
 trainer = Trainer("Peter")
 
