@@ -1,0 +1,16 @@
+1. Create class Person
+    1.1 Create __init__ to receive the data
+    1.2 Create __repr__ method so it is represented not only as a string but for the machine as well.
+    Казвайки репрезентирана, означава и на машинно ниво.
+    1.3 Create __add__ method using method overloading in order  to overload the operator "+" in order to
+concatenate two strings.
+
+    def __add__(self, other): в случая __add__ e все едно "+" като self е
+    стойностт, която е отляво а other стойността, която ще е отдясно.
+
+
+2. Create class Group:
+    2.1 Create __init__
+    2.2 Create magic method for the lentgh of the list of people
+    2.3 Creata a magic method __add__ to create a new instance when concatanating two groups of people
+    2.4 Create a magi method
