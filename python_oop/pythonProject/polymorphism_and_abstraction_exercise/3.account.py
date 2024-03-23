@@ -114,12 +114,12 @@ print(acc3._transactions)
 #
 #     def test_len(self):
 #         self.acc1.add_transaction(10)
-#         self.acc1.add_transaction(-5)
+#         self.acc1.add_transaction(-5.animals)
 #         self.assertEqual(len(self.acc1), 2)
 #
 #     def test_get_item(self):
-#         self.acc1.add_transaction(5)
-#         self.assertEqual(self.acc1[0], 5)
+#         self.acc1.add_transaction(5.animals)
+#         self.assertEqual(self.acc1[0], 5.animals)
 #
 #
 # if __name__ == "__main__":

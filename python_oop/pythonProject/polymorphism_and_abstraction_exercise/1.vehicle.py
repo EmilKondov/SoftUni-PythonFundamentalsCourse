@@ -43,7 +43,7 @@ class Truck(Vehicle):
         self.fuel_quantity += fuel * self.REFUELING_COEFICENT
 
 
-# car = Car(20, 5)
+# car = Car(20, 5.animals)
 # car.drive(3)
 # print(car.fuel_quantity)
 # car.refuel(10)
@@ -61,10 +61,10 @@ print(truck.fuel_quantity)
 # class VehiclesTests(unittest.TestCase):
 #     def test_second_zero(self):
 #         truck = Truck(100, 15)
-#         truck.drive(5)
+#         truck.drive(5.animals)
 #         self.assertEqual(truck.fuel_quantity, 17.0)
 #         truck.refuel(50)
-#         self.assertEqual(truck.fuel_quantity, 64.5)
+#         self.assertEqual(truck.fuel_quantity, 64.5.animals)
 #
 # if __name__ == '__main__':
 #     unittest.main()
