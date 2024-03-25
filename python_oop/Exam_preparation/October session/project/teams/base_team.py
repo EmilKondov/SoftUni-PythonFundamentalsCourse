@@ -2,7 +2,7 @@ import math
 from abc import ABC, abstractmethod
 from typing import List
 
-from equipment.base_equipment import BaseEquipment
+from project.equipment.base_equipment import BaseEquipment
 
 
 class BaseTeam(ABC):
@@ -51,12 +51,12 @@ class BaseTeam(ABC):
     def get_statistics(self):
         average_protection = math.floor(sum(p.protection for p in self.equipment) / len(self.equipment)
                                         ) if self.equipment else 0
-        return (f"Name: {self.name}"
-               f"Country: {self.country}"
-               f"Advantage: {self.advantage} points"
-               f"Budget: {self.budget}EUR"
-               f"Wins: {self.wins}"
-               f"Total Equipment Price: {sum(e.price for e in self.equipment)}"
+        return (f"Name: {self.name}\n"
+               f"Country: {self.country}\n"
+               f"Advantage: {self.advantage} points\n"
+               f"Budget: {self.budget:.2f}EUR\n"
+               f"Wins: {self.wins}\n"
+               f"Total Equipment Price: {sum(e.price for e in self.equipment):.2f}\n"
                f"Average Protection: {average_protection}")
 
 

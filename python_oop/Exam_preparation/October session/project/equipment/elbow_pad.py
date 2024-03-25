@@ -1,4 +1,4 @@
-from equipment.base_equipment import BaseEquipment
+from project.equipment.base_equipment import BaseEquipment
 
 
 class ElbowPad(BaseEquipment):
@@ -6,4 +6,4 @@ class ElbowPad(BaseEquipment):
         super().__init__(protection=90, price=25)
 
     def increase_price(self):
-        self.price *= 1.10
+        self.price *= 1.1

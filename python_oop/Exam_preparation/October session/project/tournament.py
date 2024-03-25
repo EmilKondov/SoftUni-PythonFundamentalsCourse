@@ -91,10 +91,10 @@ class Tournament:
         return f"Successfully changed {number_of_changed_equipment}pcs of equipment."
 
     def play(self, team_name1: str, team_name2: str):
-        team1 = next((t for t in self.teams if t.__class__.__name__ == team_name1), None)
-        team2 = next((t for t in self.teams if t.__class__.__name__ == team_name2), None)
+        team1 = next((t for t in self.teams if t.name == team_name1), None)
+        team2 = next((t for t in self.teams if t.name == team_name2), None)
 
-        if not team1.__class__.__name__ != team2.__class__.__name__:
+        if not team1.name != team2.name:
             raise Exception("Game cannot start! Team types mismatch!")
         team1_points = self.get_team_points(team1)
         team2_points = self.get_team_points(team2)
