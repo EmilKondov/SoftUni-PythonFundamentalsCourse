@@ -12,6 +12,7 @@ class Library:
         self.books = books
 
 
-    def find_book(self, title):
-        
+    def find_book_title(self, title):
+        book = [b for b in self.books if b.title == title]
+
 
