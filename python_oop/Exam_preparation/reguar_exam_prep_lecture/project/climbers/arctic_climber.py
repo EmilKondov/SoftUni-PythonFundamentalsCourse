@@ -7,13 +7,14 @@ class ArcticClimber(BaseClimber):
         super().__init__(name, strength=200)
 
     def can_climb(self) -> bool:
-        self.strength >= 100
+        return self.strength >= 100
 
-    def climb(self, peak : BasePeak):
+    def climb(self, peak: BasePeak) -> None:
         if peak.difficulty_level == "Extreme":
-            self.strength = (self.strength - 20) * 2
-        self.strength = (self.strength - 20) * 1.5
+            self.strength -= 20 * 2
+        else:
+            self.strength -= 20 * 1.5
 
-        self.conquered_peaks.append(self.name)
+        self.conquered_peaks.append(peak.name)
 
 
