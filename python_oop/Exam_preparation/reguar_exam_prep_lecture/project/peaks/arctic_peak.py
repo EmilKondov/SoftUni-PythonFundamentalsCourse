@@ -8,10 +8,10 @@ class ArcticPeak(BasePeak):
     def get_recommended_gear(self) -> List:
         return ["Ice axe", "Crampons", "Insulated clothing", "Helmet"]
 
-    def calculate_difficulty_level(self) -> str or None:
+    def calculate_difficulty_level(self) -> str:
         if self.elevation > 3000:
-            self.difficulty_level = "Extreme"
+            return "Extreme"
         elif 2000 <= self.elevation <= 3000:
-            self.difficulty_level = "Advanced"
+            return "Advanced"
 
 
