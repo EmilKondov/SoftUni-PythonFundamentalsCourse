@@ -39,7 +39,7 @@ class SummitQuestManagerApp:
 
     def peak_wish_list(self, peak_type: str, peak_name: str, peak_elevation: int):
         try:
-            peak = self.VALID_PEAK_TYPES[peak_type](peak_name)
+            peak = self.VALID_PEAK_TYPES[peak_type](peak_name, peak_elevation)
         except KeyError:
             return f"{peak_type} is an unknown type of peak."
 
@@ -48,4 +48,14 @@ class SummitQuestManagerApp:
 
 
     def check_gear(self, climber_name: str, peak_name: str, gear: List[str]):
+        cimber = next(filter(lambda c: c.name == climber_name, self.climbers))
+        peak = next(filter(lambda p: p.name == peak_name, self.peaks))
+
+        if peak.get_recommended_gear() == gear:
+            return f"{climber_name} is prepared to climb {peak_name}."
+        else:
+            cimber.is_prepared = False
+            return f"{climber_name} is not prepared to climb {peak_name}. " \
+                   f"Missing gear:" \
+                   f" {', '.join(g for g in sorted(peak.get_recommended_gear()) if g not in gear)}"
         
