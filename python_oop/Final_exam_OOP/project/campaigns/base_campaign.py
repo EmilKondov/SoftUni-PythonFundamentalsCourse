@@ -1,14 +1,17 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-class  BaseCampaign(ABC):
+from project.influencers.base_influencer import BaseInfluencer
+
+
+class BaseCampaign(ABC):
     UNIQUE_CAMPAIGN_ID = []
     def __init__(self, campaign_id: int, brand: str, budget: float, required_engagement: float):
         self.campaign_id = campaign_id
         self.brand = brand
         self.budget = budget
         self.required_engagement = required_engagement
-        self.approved_infuencers: List[BaseInfluencer] = []
+        self.approved_influencers: List[BaseInfluencer] = []
 
     @property
     def campaign_id(self):

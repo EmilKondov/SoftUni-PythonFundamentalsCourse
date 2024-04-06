@@ -55,9 +55,12 @@ class BaseInfluencer(ABC):
     def display_campaigns_participated(self) -> str:
         if not self.campaign_participated:
             return f"{self.username} has not participated in any campaigns."
-        else:
-            result = f"{self.__class__.__name__} :) {self.username} :) participated in the following campaigns:"
-            result += "\n".join([])
+        campaigns_info = f"{self.__class__.__name__} :) {self.username} :) participated in the following campaigns:\n"
+
+        for campaign in self.participated_campaigns:
+            campaigns_info += f"  - Campaign ID: {campaign.campaign_id}, Brand: {campaign.brand}, Reached followers: {campaign.reached_followers()}\n"
+
+        return campaigns_info.rstrip()
 
 
 
