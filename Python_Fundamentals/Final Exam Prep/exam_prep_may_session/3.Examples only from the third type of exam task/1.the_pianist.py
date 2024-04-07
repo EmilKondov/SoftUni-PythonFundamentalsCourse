@@ -43,7 +43,6 @@ def modifying_data_function(composer_dictionary):
                 print(f"Invalid operation! {piece} does not exist in the collection.")
 
 
-
 def base_function(number_of_pieces):
     composer_dictionary = create_composer_data(number_of_pieces)
     modifying_dictionary = modifying_data_function(composer_dictionary)

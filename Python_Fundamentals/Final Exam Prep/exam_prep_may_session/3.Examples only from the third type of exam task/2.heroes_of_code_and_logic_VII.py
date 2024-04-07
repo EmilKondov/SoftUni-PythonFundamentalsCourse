@@ -15,20 +15,20 @@ def modifying_dictionary_data(heroes_dictionary):
         command, *params = input().split(" - ")
 
         if command == "End":
-            pass
+            return heroes_dictionary
 
         elif command == "CastSpell":
             hero_name, mp_needed, spell_name = params
 
-            if heroes_dictionary[hero_name][1] >= mp_needed:
-                heroes_dictionary[hero_name][1] -= mp_needed
+            if int(heroes_dictionary[hero_name][1]) >= int(mp_needed):
+                heroes_dictionary[hero_name][1] = int(heroes_dictionary[hero_name][1]) - int(mp_needed)
                 print(f"{hero_name} has successfully cast {spell_name} and now has {heroes_dictionary[hero_name][1]} MP!")
             else:
                 print(f"{hero_name} does not have enough MP to cast {spell_name}!")
 
         elif command == "TakeDamage":
             hero_name, damage, attacker = params
-            heroes_dictionary[hero_name][0] -= damage
+            heroes_dictionary[hero_name][0] = int(heroes_dictionary[hero_name][0]) - int(damage)
             if heroes_dictionary[hero_name][0] > 0:
                 current_hp = heroes_dictionary[hero_name][0]
                 print(f"{hero_name} was hit for {damage} HP by {attacker} and now has {current_hp} HP left!")
@@ -40,8 +40,9 @@ def modifying_dictionary_data(heroes_dictionary):
             hero_name, amount = params
             amount_recovered = amount
             mp_before_recovery = heroes_dictionary[hero_name][1]
-            heroes_dictionary[hero_name][1] += amount
-            if int(heroes_dictionary[hero_name][1]) > MAX_MANA:
+            heroes_dictionary[hero_name][1] = int(heroes_dictionary[hero_name][1]) + int(amount)
+            mp_after_recovery = int(heroes_dictionary[hero_name][1])
+            if int(mp_after_recovery) > MAX_MANA:
                 heroes_dictionary[hero_name][1] = MAX_MANA
                 amount_recovered = MAX_MANA - int(mp_before_recovery)
             print(f"{hero_name} recharged for {amount_recovered} MP!")
@@ -50,8 +51,9 @@ def modifying_dictionary_data(heroes_dictionary):
             hero_name, amount = params
             amount_recovered = amount
             hp_before_recovery = heroes_dictionary[hero_name][0]
-            heroes_dictionary[hero_name][0] += amount
-            if int(heroes_dictionary[hero_name][0]) > MAX_HP:
+            heroes_dictionary[hero_name][0] = int(heroes_dictionary[hero_name][0]) + int(amount)
+            hp_after_recovery = int(heroes_dictionary[hero_name][0])
+            if int(hp_after_recovery) > MAX_HP:
                 heroes_dictionary[hero_name][0] = MAX_HP
                 amount_recovered = MAX_HP - int(hp_before_recovery)
             print(f"{hero_name} healed for {amount_recovered} HP!")
@@ -63,9 +65,9 @@ def base_function(heroes):
 
     for hero_name, data in modifying_dictionary.items():
         hp, mp = data[0], data[1]
-        print(f"{hero_name})"
-               f"HP: {hp}"
-               f"MP: {mp}")
+        print(f"{hero_name}\n"
+               f"  HP: {hp}\n"
+               f"  MP: {mp}")
 
 
 n = int(input())
