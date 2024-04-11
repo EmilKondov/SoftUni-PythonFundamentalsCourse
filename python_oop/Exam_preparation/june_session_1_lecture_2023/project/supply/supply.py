@@ -1,4 +1,4 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 class Supply(ABC):
     def __init__(self, name: str, energy: int):
@@ -26,8 +26,9 @@ class Supply(ABC):
             raise ValueError("Energy cannot be less than zero.")
         self.__energy = value
 
+    @abstractmethod
     def details(self):
-        return f"{type}: {self.name}, {self.energy}"
+        pass
 
     # The type of the supply is either "Food" or "Drink".
     # Hint: override the method in the child classes.
