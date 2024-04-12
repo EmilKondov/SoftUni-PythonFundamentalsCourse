@@ -11,4 +11,3 @@ class Controller:
 
     def add_player(self, *players: Tuple[Player]) -> str :
         players_added = []
-        
