@@ -3,8 +3,11 @@ import json
 import urllib.request
 import requests
 
+from PIL import ImageTk
+
 from io import BytesIO
-from PIL import ImageTk, Image
+
+
 
 def display_image(image_url: str) -> None:
     with urllib.request.urlopen(image_url) as url:
@@ -15,7 +18,6 @@ def display_image(image_url: str) -> None:
 
     image_label.config(image=image)
     image_label.image = image # keeps reference to the image
-
 
 
 #В тази функция е връзката ни с API, откъдето получаваме линк към изображението, което AI е генерирал.
