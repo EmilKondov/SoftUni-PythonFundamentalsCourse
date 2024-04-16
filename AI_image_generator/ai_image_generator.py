@@ -7,7 +7,7 @@ import requests, io
 
 
 def generate():
-    openai.api_key = "place API"
+    openai.api_key = os.getenv("SECRET_OPENAI_AI_KEY")
     user_prompt = prompt_entry.get("0.0", tkinter.END)
     user_prompt += "in style: " + style_dropdown.get()
 
@@ -40,6 +40,8 @@ def generate():
 root = ctk.CTk()
 root.title("AI image generator")
 
+root.iconbitmap(r"C:\Users\User\Documents\GitHub\Software_university\AI_image_generator\generator.ico")
+
 ctk.set_appearance_mode("dark")
 
 input_frame = ctk.CTkFrame(root)
@@ -69,3 +71,4 @@ canvas.pack(side="left", expand=True)
 
 
 root.mainloop()
+
