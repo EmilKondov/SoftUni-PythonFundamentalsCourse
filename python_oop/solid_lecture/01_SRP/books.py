@@ -9,7 +9,18 @@ class Book:
 
 class Library:
     def __init__(self, books):
-        self.books = books
+        self.books: List[Book] = books
+
+
+    def add_book(self, book: Book):
+        self.books.append(book)
+
+    def remove_book(self, title: str):
+        to_remove = [b for b in self.books if b.title == title]
+
+        if not to_remove:
+            raise ValueError("No such book title")
+
 
 
     def find_book_title(self, title):
