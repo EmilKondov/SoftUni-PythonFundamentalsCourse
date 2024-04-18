@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import  List
 
 class Animal(ABC):
 
@@ -8,6 +9,8 @@ class Animal(ABC):
 
     def get_species(self):
         return self.__class__.__name__
+
+
 class Cat(Animal):
 
     def make_sound(self):
@@ -23,9 +26,11 @@ class Bird(Animal):
     def make_sound(self):
         return "piu piu"
 
-Animal("cat")
-print
 
-## добавете ново животно и рефакторирайте кода да работи без да се налага да се правят промени по него
-## при добавяне на нови животни
-# animals = [Animal('cat'), Animal('dog'), Animal('chicken')]
+def animal_sound(animals: List[Animal]):
+    for animal in animals:
+        print(animal.make_sound())
+
+animals = [Cat(), Dog()]
+
+animal_sound(animals)
