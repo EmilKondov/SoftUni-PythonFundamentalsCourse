@@ -52,12 +52,3 @@ class RobotDuck(Duck):
 
 
 
-rb = RubberDuck
-print(rb.quack())
-
-duck = Duck
-print(duck.quack())
-print(duck.fly())
-
-robot_duck = RobotDuck
-print(robot_duck.fly(50))
