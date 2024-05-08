@@ -17,6 +17,11 @@ class countdown_iterator:
 
 
 
-iterator = countdown_iterator(10)
+# iterator = countdown_iterator(10)
+# for item in iterator:
+#     print(item, end=" ")
+
+
+iterator = countdown_iterator(0)
 for item in iterator:
     print(item, end=" ")
