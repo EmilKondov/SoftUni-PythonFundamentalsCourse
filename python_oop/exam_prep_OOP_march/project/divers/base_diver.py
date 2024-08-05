@@ -11,8 +11,13 @@ class BaseDiver(ABC):
         self.name = name
         self.oxygen_level = oxygen_level
         self.catch: List[BaseFish] = []
-        self.competition_points = 0
-        self.has_health_issue = has_health_issue
+        self.__competition_points = 0.0
+        self.has_health_issue = False
+
+        @property
+        def competition_points(self) -> float:
+            return round(competition_points, 1)
+
 
         #setter and getter for name
         @property
@@ -39,24 +44,26 @@ class BaseDiver(ABC):
 
 
 
-
-
-
-
-
+    @abstractmethod
     def miss(time_to_catch: int):
         pass
+
 
     def renew_oxy(self):
         pass
 
-    def hit(fish: BaseFish):
-        pass
+    def hit(self, fish: BaseFish):
+        if self.oxygen_level < fish.time_to_catch:
+            self.oxygen_level = 0
+        else:
+            self.catch.append(fish)
+            self.__competition_points += fish.points
+            self.oxygen_level -= fish.time_to_catch
 
     def update_health_status(self):
-        pass
+        self.has_health_issue = not self.has_health_issue
 
 
     def __str__(self):
-        pass
+        return f"{class.__name}: [Name: {name}, Oxygen level left: {oxygen_level}, Fish caught: {count of caught fish}, Points earned: {competition_points}]"
 
