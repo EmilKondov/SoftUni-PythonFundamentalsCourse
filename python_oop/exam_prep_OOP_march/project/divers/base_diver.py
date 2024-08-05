@@ -65,5 +65,5 @@ class BaseDiver(ABC):
 
 
     def __str__(self):
-        return f"{class.__name}: [Name: {name}, Oxygen level left: {oxygen_level}, Fish caught: {count of caught fish}, Points earned: {competition_points}]"
+        return f"{self.__class__.__name__}: [Name: {self.name}, Oxygen level left: {self.oxygen_level}, Fish caught: {len(self.catch)}, Points earned: {self.competition_points}]"
 
