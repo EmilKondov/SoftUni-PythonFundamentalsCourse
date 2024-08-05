@@ -10,7 +10,7 @@ class ScubaDiver(BaseDiver):
     def miss(self, time_to_catch: int):
         reduced_level = round(time_to_catch * 0.3)
 
-        
+
 
     def renew_oxy(self):
         pass
