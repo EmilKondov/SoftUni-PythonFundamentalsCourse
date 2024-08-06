@@ -10,9 +10,10 @@ class FreeDiver(BaseDiver):
     def miss(self, time_to_catch: int):
         reduced_amount = round(time_to_catch * 0.6)
 
-        if (self.oxygen_level <= time_to_catch) < 0:
+        if (self.oxygen_level - time_to_catch) < 0:
             self.oxygen_level = 0
         else:
             self.oxygen_level -= reduced_amount
+
     def renew_oxy(self):
-        pass
+        self.oxygen_level = self.INITIAL_OXYGEN_LEVEL
